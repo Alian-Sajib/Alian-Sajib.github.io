@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .container2 {
+            align-self: start;
+            /* background-color: blueviolet; */
+            text-align: center;
+        }
+    </style>
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+    <div class='container'>
+        <div>
+            <h3 id="head">Shopping Cart</h3>
+            <hr>
+            <table id="product-list">
+                <thead>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Add Product to Cart</th>
+                </thead>
+                <tr>
+                    <td>#111</td>
+                    <td>Airbuds</td>
+                    <td>4700/=</td>
+                    <td><button class="button"> Add To Cart</button></td>
+                </tr>
+                <tr>
+                    <td>#122</td>
+                    <td>Keyboard</td>
+                    <td>500/=</td>
+                    <td><button class="button"> Add To Cart</button></td>
+                </tr>
+                <tr>
+                    <td>#683</td>
+                    <td>Mouse</td>
+                    <td>1200/=</td>
+                    <td><button class="button"> Add To Cart</button></td>
+                </tr>
+                <tr>
+                    <td>#514</td>
+                    <td>iTag</td>
+                    <td>3000/=</td>
+                    <td><button class="button"> Add To Cart</button></td>
+                </tr>
+                <tr>
+                    <td>#105</td>
+                    <td>Type-C Cable</td>
+                    <td>200/=</td>
+                    <td><button class="button"> Add To Cart</button></td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div class="container2">
+            <h3>Cart Item List</h3>
+            <hr>
+            <table id="cart-list">
+                <thead>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Cart Product</th>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
