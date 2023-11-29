@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='shortcut icon' href="#">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <title>Expression Checker</title>
+</head>
+
+<body>
+
+    <div class='container'>
+        <h3>Expression Checker</h3>
+        <hr>
+
+        <div>
+            <label for="Expression">Choose An Expression : </label>
+            <select name="Expression" id="expression">
+                <option value="email">Email</option>
+                <option value="phone no">Phone</option>
+                <option value="postal-code">Postal Code</option>
+                <option value="name">Person name</option>
+            </select>
+        </div>
+        <div id="form-div">
+            <form id="form">
+                <input id="input" placeholder="Your Text/Number" type="text">
+                <input type="submit" id="button" value="Submit">
+            </form>
+        </div>
+        <div id='msg'>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
