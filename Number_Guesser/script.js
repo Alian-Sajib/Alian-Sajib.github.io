@@ -11,9 +11,9 @@ let rand = parseInt(getRandomInt(1, 11));
 let value;
 
 form.addEventListener('submit', (e) => {
-     value = input.value;
+    value = input.value;
     if (!document.querySelector('p')) {
-        if (attemp < 1) {
+        if (attemp < 0) {
             input.value = '';
             message(`You loss... Try Again`, "loss");
 
@@ -24,13 +24,13 @@ form.addEventListener('submit', (e) => {
             if (value == '')
                 message(' Enter a Number to Guess...', 'loss');
 
-            else if (value == rand) {
+            else if (parseInt(value) === rand) {
                 attemp = 0;
                 input.value = '';
                 message(' Congratulation You Win !!!', 'green');
             }
 
-            else if (rand >= value) {
+            else if (rand >= parseInt(value)) {
                 message(`Correct Answer is Greater...\n ${attemp} attempt is left`, "red"); attemp--;
 
             }
