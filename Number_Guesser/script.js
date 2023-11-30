@@ -5,51 +5,43 @@ let input = document.querySelector('#input');
 let enter = document.querySelector("#btn");
 let restart = document.querySelector("#restart");
 let div = document.querySelector('.container');
-let attemp = 2;
+
 //Add event listener
+let attemp = 2;
 let rand = parseInt(getRandomInt(1, 11));
 let value;
 
 form.addEventListener('submit', (e) => {
     value = input.value;
     if (!document.querySelector('p')) {
-        if (attemp < 0) {
+        if (value == '')
+            message(' Enter a Number to Guess...', 'loss');
+
+        else if (parseInt(value) === rand) {
+            attemp = 0;
             input.value = '';
-            message(`You loss... Try Again`, "loss");
+            message(' Congratulation You Win !!!', 'green');
+        }
+
+        else if (rand >= parseInt(value)) {
+            if (attemp != 0)
+                message(`Correct Answer is Greater...\n ${attemp} attempt is left`, "red");
+            else {
+                input.value = '';
+                message(`You loss... Try Again`, "loss");
+            }
 
         }
 
         else {
-
-            if (value == '')
-                message(' Enter a Number to Guess...', 'loss');
-
-            else if (parseInt(value) === rand) {
-                attemp = 0;
-                input.value = '';
-                message(' Congratulation You Win !!!', 'green');
-            }
-
-            else if (rand >= parseInt(value)) {
-                if (attemp != 0)
-                    message(`Correct Answer is Greater...\n ${attemp} attempt is left`, "red");
-                else {
-                    input.value = '';
-                    message(`You loss... Try Again`, "loss");
-                }
-
-            }
-
+            if (attemp != 0)
+                message(`Correct Answer is Smaller...\n ${attemp} attempt is left`, "red");
             else {
-                if (attemp != 0)
-                    message(`Correct Answer is Smaller...\n ${attemp} attempt is left`, "red");
-                else {
-                    input.value = '';
-                    message(`You loss... Try Again`, "loss");
-                }
+                input.value = '';
+                message(`You loss... Try Again`, "loss");
             }
-            attemp--;
         }
+        attemp--;
     }
 
     e.preventDefault();
