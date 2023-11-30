@@ -7,12 +7,11 @@ let restart = document.querySelector("#restart");
 let div = document.querySelector('.container');
 let attemp = 2;
 //Add event listener
+let rand = parseInt(getRandomInt(1, 11));
+let value = input.value;
 
 form.addEventListener('submit', (e) => {
-
-    let rand = parseInt(getRandomInt(1, 11));
-    let value = input.value;
-
+     value = input.value;
     if (!document.querySelector('p')) {
         if (attemp < 1) {
             input.value = '';
@@ -49,6 +48,7 @@ restart.addEventListener('click', e => {
     if (document.querySelector('p'))
         document.querySelector('p').remove();
     attemp = 2;
+    rand = parseInt(getRandomInt(1, 11));
 });
 
 function getRandomInt(min, max) {
