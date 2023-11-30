@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guesser Game</title>
+    <link rel='shortcut icon' href='#'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+    <style>
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: green;
+        }
+        .loss{
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Number Guesser Game</h3>
+        <hr>
+        <label>Enter a Number Between 1 to 10 range</label>
+        <hr>
+        <form id='form'>
+            <input placeholder="Enter a number to guess" type='text' id="input">
+            <input type='submit' id="btn" value="Enter">
+        </form>
+        <hr>
+        <button id="restart">Restart</button>
+        <div id="div"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
