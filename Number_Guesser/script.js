@@ -8,7 +8,7 @@ let div = document.querySelector('.container');
 let attemp = 2;
 //Add event listener
 let rand = parseInt(getRandomInt(1, 11));
-let value = input.value;
+let value;
 
 form.addEventListener('submit', (e) => {
      value = input.value;
