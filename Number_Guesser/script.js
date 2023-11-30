@@ -24,7 +24,7 @@ form.addEventListener('submit', (e) => {
             if (value == '')
                 message(' Enter a Number to Guess...', 'loss');
 
-            else if (parseInt(value) === rand) {
+            else if (parseInt(value) == rand) {
                 attemp = 0;
                 input.value = '';
                 message(' Congratulation You Win !!!', 'green');
