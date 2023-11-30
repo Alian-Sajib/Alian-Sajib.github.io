@@ -24,20 +24,31 @@ form.addEventListener('submit', (e) => {
             if (value == '')
                 message(' Enter a Number to Guess...', 'loss');
 
-            else if (parseInt(value) == rand) {
+            else if (parseInt(value) === rand) {
                 attemp = 0;
                 input.value = '';
                 message(' Congratulation You Win !!!', 'green');
             }
 
             else if (rand >= parseInt(value)) {
-                message(`Correct Answer is Greater...\n ${attemp} attempt is left`, "red"); attemp--;
+                if (attemp != 0)
+                    message(`Correct Answer is Greater...\n ${attemp} attempt is left`, "red");
+                else {
+                    input.value = '';
+                    message(`You loss... Try Again`, "loss");
+                }
 
             }
 
             else {
-                message(`Correct Answer is Smaller...\n ${attemp} attempt is left`, "red"); attemp--;
+                if (attemp != 0)
+                    message(`Correct Answer is Smaller...\n ${attemp} attempt is left`, "red");
+                else {
+                    input.value = '';
+                    message(`You loss... Try Again`, "loss");
+                }
             }
+            attemp--;
         }
     }
 
