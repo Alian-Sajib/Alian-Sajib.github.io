@@ -6,42 +6,47 @@ let enter = document.querySelector("#btn");
 let restart = document.querySelector("#restart");
 let div = document.querySelector('.container');
 
-//Add event listener
+
 let attemp = 2;
 let rand = parseInt(getRandomInt(1, 11));
 let value;
 
 form.addEventListener('submit', (e) => {
+
     value = input.value;
+
     if (!document.querySelector('p')) {
-        if (value == '')
+
+        if (value === '')
             message(' Enter a Number to Guess...', 'loss');
-
-        else if (parseInt(value) === rand) {
-            attemp = 0;
-            input.value = '';
-            message(' Congratulation You Win !!!', 'green');
-        }
-
-        else if (rand >= parseInt(value)) {
-            if (attemp != 0)
-                message(`Correct Answer is Greater...\n ${attemp} attempt is left`, "red");
-            else {
-                input.value = '';
-                message(`You loss... Try Again`, "loss");
-            }
-
-        }
-
         else {
-            if (attemp != 0)
-                message(`Correct Answer is Smaller...\n ${attemp} attempt is left`, "red");
-            else {
+
+            if (parseInt(value) === rand) {
+                attemp = 0;
                 input.value = '';
-                message(`You loss... Try Again`, "loss");
+                message(' Congratulation You Win !!!', 'green');
             }
+
+            else if (rand > parseInt(value)) {
+                if (attemp != 0)
+                    message(`Correct Answer is Greater...\n ${attemp} attempt is left...`, "red");
+                else {
+                    input.value = '';
+                    message(`You loss... Try Again..`, "loss");
+                }
+
+            }
+
+            else {
+                if (attemp != 0)
+                    message(`Correct Answer is Smaller...\n ${attemp} attempt is left...`, "red");
+                else {
+                    input.value = '';
+                    message(`You loss... Try Again..`, "loss");
+                }
+            }
+            attemp--;
         }
-        attemp--;
     }
 
     e.preventDefault();
