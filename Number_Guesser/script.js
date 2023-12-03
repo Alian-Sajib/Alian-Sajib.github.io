@@ -22,7 +22,7 @@ form.addEventListener('submit', (e) => {
         else {
 
             if (parseInt(value) === rand) {
-                attemp = 0;
+                attemp = -1;
                 input.value = '';
                 message(' Congratulation You Win !!!', 'green');
             }
@@ -32,6 +32,7 @@ form.addEventListener('submit', (e) => {
                     message(`Correct Answer is Greater...\n ${attemp} attempt is left...`, "red");
                 else {
                     input.value = '';
+                    attemp = -1;
                     message(`You loss... Try Again..`, "loss");
                 }
 
@@ -42,6 +43,7 @@ form.addEventListener('submit', (e) => {
                     message(`Correct Answer is Smaller...\n ${attemp} attempt is left...`, "red");
                 else {
                     input.value = '';
+                    attemp = -1;
                     message(`You loss... Try Again..`, "loss");
                 }
             }
@@ -68,7 +70,7 @@ function message(text, className) {
     msg.className = className;
     msg.innerHTML = text;
     div.insertBefore(msg, restart);
-    if (attemp > 0) {
+    if (attemp >= 0) {
         setTimeout(() => {
             msg.remove();
         }, 1000);
